@@ -1,0 +1,28 @@
+{
+  "name": "full-stack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "zhonglai Lu",
+  "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=dev nodemon  index.js"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "babel-runtime": "^6.26.0",
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "formidable": "^1.2.1",
+    "http": "^0.0.0",
+    "https": "^1.0.0",
+    "mongoose": "^5.8.7",
+    "passport": "^0.4.1"
+  }
+}
