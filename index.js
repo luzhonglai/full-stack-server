@@ -10,6 +10,7 @@ const http = require("http");
 const https = require("https");
 const express = require("express");
 const passport = require("passport");
+const json = require("express-json");
 const bodyParser = require("body-parser");
 const { port, isHttp } = require("./config");
 const app = new express();
@@ -22,6 +23,7 @@ require("./routes/index")(app); // 配置路由入口
 // require("./config/passport")(passport); //验证token
 
 // 中间件
+app.use(json()); //美化json 数据格式
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

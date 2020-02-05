@@ -7,7 +7,9 @@
 import client from "../dbModel/client.js";
 
 class Clinet {
-  async logon() {}
+  async sigin() {
+    
+  }
   async initIndex() {}
 }
 
