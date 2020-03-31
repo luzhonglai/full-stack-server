@@ -1,9 +1,12 @@
 module.exports = {
   publicPath: "/",
+
   // 输出文件目录
   outputDir: "dist",
+
   assetsDir: "assets",
-  lintOnSave: true,
+  lintOnSave: false,
+
   devServer: {
     open: true, //设置自动打开
     port: 1880, //设置端口
@@ -17,6 +20,27 @@ module.exports = {
           "^/api": "" // 替换target中的请求地址，也就是说以后你在请求http://api.douban.com/v2/XXXXX这个地址的时候直接写成/api即可。
         }
       }
+    }
+    // before(app) {
+    //     app.get('')
+    // }
+  },
+
+  css: {
+    loaderOptions: {
+      stylus: {
+        'resolve url': true,
+        'import': [
+          './src/theme'
+        ]
+      }
+    }
+  },
+
+  pluginOptions: {
+    'cube-ui': {
+      postCompile: true,
+      theme: false
     }
   }
 };

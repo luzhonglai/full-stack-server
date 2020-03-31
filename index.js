@@ -16,7 +16,6 @@ const { port, isHttp } = require("./config");
 const app = new express();
 
 //  配置
-require("babel-register"); // 支持es6
 require("./pulgins/mongodb"); //数据库mongodb
 require("./pulgins/http")(app); // 解决跨域
 require("./routes/index")(app); // 配置路由入口

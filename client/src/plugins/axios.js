@@ -12,21 +12,12 @@ const config = {
   withCredentials: true, // Check cross-site Access-Control
   headers: {
     apptype: "pc",
-    sign: "XnXv8gPAIdItFR0L15hsgfaBXcRQrM3/y1QQGAmWWZ8="
+    sign: "6r02XP8vvo7fd7SBVGUimPaBXcRQrM3/y1QQGAmWWZ8="
   }
 };
 const _axios = axios.create(config);
-async function setConfigKey() {
-  const {
-    data: { data: sign }
-  } = await _axios.post("/getsigns");
-  config.headers.sign = sign;
-}
-setConfigKey();
-
 _axios.interceptors.request.use(
   function(config) {
-    console.log(config);
     return config;
   },
   function(error) {

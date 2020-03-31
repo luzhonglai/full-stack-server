@@ -1,9 +1,22 @@
 <template>
   <div id="app">
+    <div>{{this.add}}</div>
     <router-view></router-view>
   </div>
 </template>
+<script>
+import Form from "./components/form/index";
 
+export default {
+  name: "app",
+  data() {
+    return {};
+  },
+  components: {
+    Form
+  }
+};
+</script>
 <style>
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
