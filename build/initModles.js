@@ -4,7 +4,7 @@
  * @Author: Zhonglai Lu
  * @Date: 2020-09-22 11:40:48
  * @LastEditors: Zhonglai Lu
- * @LastEditTime: 2020-10-08 21:58:27
+ * @LastEditTime: 2020-10-10 17:58:27
  */
 
 const mongodb = require('mongodb')
@@ -23,10 +23,20 @@ clinet.then(async (db) => {
 
   await new Promise((resolve, reject) => {
     console.log('清除原有数据表')
-    await
   }).then(() => {
     console.log('清除完毕=======')
   }).catch(err => {
     console.log('-------', err)
+  })
+
+  // 创建数据表
+  await new Promise((resolve, reject) => {
+    await db.createCollection('user' )
+    await db.craateCollection('config')
+    await db.createCollection('log')
+    await db.createCollection('message')
+    resolve()
+  }).then(res => {
+    console.log('创建数据表完毕')
   })
 })
