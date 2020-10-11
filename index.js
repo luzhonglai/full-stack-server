@@ -1,3 +1,11 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: Zhonglai Lu
+ * @Date: 2020-09-22 09:54:01
+ * @LastEditors: Zhonglai Lu
+ * @LastEditTime: 2020-10-11 22:17:18
+ */
 
 /**
  *
@@ -48,6 +56,6 @@ const Server = isHttp ? httpServer : httpsServer;
 Server.listen(port, err => {
   if (err) throw err;
   console.log(
-    `Server running at ${isHttp ? "http" : "https"}://localhost:${port}/`
+    `服务地址----> ${isHttp ? "http" : "https"}://localhost:${port}/`
   );
 });

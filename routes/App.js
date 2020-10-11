@@ -1,7 +1,18 @@
+/*
+ * @Descripttion: 
+ * @version: 
+ * @Author: Zhonglai Lu
+ * @Date: 2020-09-22 09:56:11
+ * @LastEditors: Zhonglai Lu
+ * @LastEditTime: 2020-10-11 15:52:34
+ */
 
-const Router = require('express').Router
+const router = require('express').Router()
 
-const A = require('../controller/App.js')
+const App = require('../controller/App')
 
 
-Router.post('/home', )
+// router.post('/home', App.home)
+
+
+export default router

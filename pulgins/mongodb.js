@@ -4,19 +4,21 @@
  * @Description: mikey.zhaopeng
  */
 
-const { db_URI: URI } = require("../config");
-const mongoose = require("mongoose");
+const { host, dbName } = require("../config").dbConfig;
+import mongoose from 'mongoose'
+
+let DB = null; 
+
 mongoose
-  .connect(URI, {
+  .connect(`${host}/${dbName}`, {
     useNewUrlParser: true,
-    useFindAndModify: false,
-    useUnifiedTopology: true
+    useFindAndModify: true,
+  }).then(async(db) => {
+
+    console.log('blog 数据库连接成功！--->',host +'/'+ dbName);
   })
-  .then(() => {
-    console.log("mongodb open: " + URI);
-  })
-  .catch(e => {
-    console.log("mongoodb error" + e);
+  .catch(err => {
+    console.log('blog 数据库连接失败！', err);
   });
 
-module.exports = mongoose;
+module.exports = () => DB;

@@ -10,8 +10,8 @@ import Api from "./api";
 import App from "./App"
 
 module.exports = app => {
-  app.use("/apl", Api);
+  app.use("/api", Api);
   app.use("/client", Client);
   app.use("/admin", Admin);
-  app.use("/App",App)
+  app.use("/App", App)
 };

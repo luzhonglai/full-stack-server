@@ -4,7 +4,10 @@
  * @Description: wetcha-weapp 小程序路由汇总
  */
 
-const Router = require("express").Router();
+const R = require("express").Router();
 const Api = require("../controller/api.js");
 
-export default Router;
+
+R.get('/config', Api.config)
+
+export default R;
