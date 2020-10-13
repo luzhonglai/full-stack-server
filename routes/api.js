@@ -4,10 +4,13 @@
  * @Description: wetcha-weapp 小程序路由汇总
  */
 
-const R = require("express").Router();
-const Api = require("../controller/api.js");
+const express = require('express');
+import Api from '../controller/api.js';
 
+const R = express.Router()
 
 R.get('/config', Api.config)
+R.get('/banner', Api.banner)
+R.post('/login', Api.wechatLogin)
 
 export default R;

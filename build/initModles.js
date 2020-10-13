@@ -4,7 +4,7 @@
  * @Author: Zhonglai Lu
  * @Date: 2020-09-22 11:40:48
  * @LastEditors: Zhonglai Lu
- * @LastEditTime: 2020-10-11 23:11:08
+ * @LastEditTime: 2020-10-13 14:37:00
  */
 
 const mongodb = require('mongodb')
@@ -19,6 +19,7 @@ let client = MongoClient.connect(connectURL, {
 })
 
 client.then(async (db) => {
+  console.log(db.db())
   let DB = db.db(dbConfig.dbName)
 
   await new Promise(async (resolve, reject) => {

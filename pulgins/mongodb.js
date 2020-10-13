@@ -1,24 +1,35 @@
 /*
- * @Author: zhonglai lu
- * @Date: 2020-01-13 15:16:20
- * @Description: mikey.zhaopeng
+ * @Descripttion: 
+ * @version: 
+ * @Author: Zhonglai Lu
+ * @Date: 2020-09-22 09:54:01
+ * @LastEditors: Zhonglai Lu
+ * @LastEditTime: 2020-10-13 18:32:53
  */
+const { MongoClient } = require('mongodb');
 
-const { host, dbName } = require("../config").dbConfig;
-import mongoose from 'mongoose'
+const {
+	host,
+	port,
+	dbName
+} = require('../config').dbConfig;
 
-let DB = null; 
+let DB = null;
 
-mongoose
-  .connect(`${host}/${dbName}`, {
-    useNewUrlParser: true,
-    useFindAndModify: true,
-  }).then(async(db) => {
+let connectUrl = `mongodb://${host}:${port}/blog`
+let client = MongoClient.connect(connectUrl, { useUnifiedTopology: true, useNewUrlParser: true });
 
-    console.log('blog 数据库连接成功！--->',host +'/'+ dbName);
-  })
-  .catch(err => {
-    console.log('blog 数据库连接失败！', err);
-  });
 
-module.exports = () => DB;
+client.then(async (db) => {
+  DB = db.db(dbName);
+	console.log('movie 数据库连接成功！');
+
+}).catch((err) => {
+
+	console.log('movie 数据库连接失败！', err.message);
+
+})
+
+module.exports = () => {
+	return DB
+}
