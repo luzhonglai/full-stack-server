@@ -4,7 +4,7 @@
  * @Author: Zhonglai Lu
  * @Date: 2020-09-22 09:54:01
  * @LastEditors: Zhonglai Lu
- * @LastEditTime: 2020-10-13 18:32:53
+ * @LastEditTime: 2020-10-25 17:30:27
  */
 const { MongoClient } = require('mongodb');
 
@@ -22,11 +22,11 @@ let client = MongoClient.connect(connectUrl, { useUnifiedTopology: true, useNewU
 
 client.then(async (db) => {
   DB = db.db(dbName);
-	console.log('movie 数据库连接成功！');
+	console.log('blog 数据库连接成功！');
 
 }).catch((err) => {
 
-	console.log('movie 数据库连接失败！', err.message);
+	console.log('blog 数据库连接失败！', err.message);
 
 })
 

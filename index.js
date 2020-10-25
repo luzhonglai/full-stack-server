@@ -4,14 +4,7 @@
  * @Author: Zhonglai Lu
  * @Date: 2020-09-22 09:54:01
  * @LastEditors: Zhonglai Lu
- * @LastEditTime: 2020-10-11 22:17:18
- */
-
-/**
- *
- *  @Author: zhonglailu
- *  @Date: 2020-01-13 14:40:39
- *  @Description: 搭建exoress中间层服务
+ * @LastEditTime: 2020-10-25 17:43:24
  */
 
 const fs = require("fs");
@@ -22,7 +15,7 @@ const express = require("express");
 const passport = require("passport");
 const json = require("express-json");
 const bodyParser = require("body-parser");
-const { port, isHttp } = require("./config");
+const { port, useHttp } = require("./config");
 const app = new express();
 
 //  配置
@@ -51,11 +44,11 @@ const options = {
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(options, app);
-const Server = isHttp ? httpServer : httpsServer;
+const Server = useHttp ? httpServer : httpsServer;
 
 Server.listen(port, err => {
   if (err) throw err;
   console.log(
-    `服务地址----> ${isHttp ? "http" : "https"}://localhost:${port}/`
+    `服务地址----> ${useHttp ? "http" : "https"}://localhost:${port}/`
   );
 });
