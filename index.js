@@ -4,7 +4,7 @@
  * @Author: Zhonglai Lu
  * @Date: 2020-09-22 09:54:01
  * @LastEditors: Zhonglai Lu
- * @LastEditTime: 2020-10-26 23:45:13
+ * @LastEditTime: 2020-10-28 00:12:06
  */
 
 const fs = require("fs");
@@ -22,7 +22,7 @@ const app = new express();
 require("./pulgins/mongodb"); //数据库mongodb
 require("./pulgins/http")(app); // 解决跨域
 require("./routes/index")(app); // 配置路由入口
-require("./plugins/passport")(passport); //验证token
+// require("./plugins/passport")(passport); //验证token
 
 // 中间件
 app.use(json()); //美化json 数据格式
