@@ -7,6 +7,10 @@
 
 
 
-const router = require('express').Router();
+const express = require('express')
 
-export default router;
+
+const R = express.Router()
+
+
+export default R;
