@@ -4,7 +4,7 @@
  * @Author: Zhonglai Lu
  * @Date: 2020-09-22 09:54:01
  * @LastEditors: Zhonglai Lu
- * @LastEditTime: 2020-10-28 00:12:06
+ * @LastEditTime: 2020-11-02 16:31:28
  */
 
 const fs = require("fs");
@@ -33,7 +33,7 @@ app.use(passport.initialize());
 
 // 配置404
 app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "./static/404.html"));
+  res.sendFile(path.resolve(__dirname, "./view/err.html"));
 });
 
 // 创建服务器
