@@ -26,6 +26,6 @@
 
 ```
 
-git clone https://github.com/zhonglai1996/full-stack-express.git
+git clone https://github.com/luzhonglai/full-stack-express.git
 
 ```
